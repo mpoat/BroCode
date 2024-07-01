@@ -1,0 +1,28 @@
+A = [4, 3, 2, 1, 5, 6, 8, 7, 13, 15, 19, 22]
+B = [0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1]
+#B = [1, 0, 1, 1, 1, 0, 0]
+
+length = len(A)
+
+Azero = []
+Aone = []
+for i in range(length):
+    if B[i] == 0:
+        Azero.append(A[i])
+    if B[i] == 1:
+        Aone.append(A[i])
+print(Azero)
+print(Aone)
+
+Azero.sort()
+Aone.sort()
+
+#print(Azero[-1])
+
+if Azero[-1] > Aone[-1]:
+    Z = [x for x in Azero if x > Aone[-1]]
+elif Aone[-1] > Azero[-1]:
+    Z = [x for x in Aone if x > Azero[-1]]
+
+ans = len(Z)
+print(ans)
